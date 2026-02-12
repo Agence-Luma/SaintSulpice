@@ -1,0 +1,27 @@
+{
+  "id": "gradient",
+  "type": "SharedSlice",
+  "name": "Gradient",
+  "description": "Gradient",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "gradient": {
+          "type": "Image",
+          "config": {
+            "label": "Dégradé",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Bebas";
+    src: url("/assets/fonts/bebas/regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Carmen";
+    src: url("/assets/fonts/carmen/regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-carmen {
+    
+}
+
+.font-bebas {
+    
+}

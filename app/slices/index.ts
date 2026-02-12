@@ -3,4 +3,18 @@
 import { defineAsyncComponent } from "vue";
 import { defineSliceZoneComponents } from "@prismicio/vue";
 
-export const components = defineSliceZoneComponents({});
+export const components = defineSliceZoneComponents({
+  full_width_image: defineAsyncComponent(
+    () => import("./FullWidthImage/index.vue"),
+  ),
+  full_width_image_text_button: defineAsyncComponent(
+    () => import("./FullWidthImageTextButton/index.vue"),
+  ),
+  full_width_text: defineAsyncComponent(
+    () => import("./FullWidthText/index.vue"),
+  ),
+  gradient: defineAsyncComponent(() => import("./Gradient/index.vue")),
+  news_list: defineAsyncComponent(() => import("./NewsList/index.vue")),
+  people_list: defineAsyncComponent(() => import("./PeopleList/index.vue")),
+  title_button: defineAsyncComponent(() => import("./TitleButton/index.vue")),
+});

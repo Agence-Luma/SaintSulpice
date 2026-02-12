@@ -1,0 +1,44 @@
+{
+  "id": "title_button",
+  "type": "SharedSlice",
+  "name": "TitleButton",
+  "description": "TitleButton",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Lien",
+            "placeholder": "",
+            "select": "media",
+            "allowText": true
+          }
+        },
+        "reverse": {
+          "type": "Boolean",
+          "config": {
+            "label": "A droite ?",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
