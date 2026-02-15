@@ -27,7 +27,6 @@
 				"thumbnails": {}
 			},
 			"mobile_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
@@ -46,7 +45,14 @@
 					"background": "transparent"
 				},
 				"alt": "there",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"slice_id": {
+				"__TYPE__": "FieldContent",
+				"value": "zulu",
+				"type": "Text"
 			}
 		},
 		"items": []

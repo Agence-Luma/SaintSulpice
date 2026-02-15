@@ -44,7 +44,7 @@ export default defineNuxtConfig({
         fontFamily: {
           sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
           bebas: ['Bebas', 'ui-sans-serif'],
-          carmen: ['Carmen', 'ui-sans-serif'],
+          montserrat: ['Montserrat', 'ui-sans-serif'],
         },
         boxShadow: {
           'l': '0 4px 16px rgba(0, 0, 0, 0.15)',

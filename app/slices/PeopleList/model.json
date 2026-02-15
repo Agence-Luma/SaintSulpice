@@ -12,6 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "slice_id": {
+          "type": "Text",
+          "config": {
+            "label": "ID du bloc (unique, pour les liens)",
+            "placeholder": ""
+          }
+        },
         "peoples": {
           "type": "Group",
           "config": {

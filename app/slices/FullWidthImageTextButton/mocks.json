@@ -66,13 +66,18 @@
 				]
 			},
 			"link": {
-				"__TYPE__": "LinkContent",
 				"key": "b762d601-ddeb-4eb6-abf9-3c87d851e879",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev",
 					"text": "eat"
 				}
+			},
+			"slice_id": {
+				"__TYPE__": "FieldContent",
+				"value": "earth",
+				"type": "Text"
 			}
 		},
 		"items": []

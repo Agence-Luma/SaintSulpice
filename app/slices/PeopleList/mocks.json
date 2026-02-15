@@ -68,6 +68,11 @@
 						]
 					}
 				]
+			},
+			"slice_id": {
+				"__TYPE__": "FieldContent",
+				"value": "adjective",
+				"type": "Text"
 			}
 		},
 		"items": []

@@ -24,6 +24,11 @@
 			"reverse": {
 				"__TYPE__": "BooleanContent",
 				"value": true
+			},
+			"slice_id": {
+				"__TYPE__": "FieldContent",
+				"value": "condition",
+				"type": "Text"
 			}
 		},
 		"items": []

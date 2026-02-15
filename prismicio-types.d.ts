@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomeDocumentDataSlicesSlice =
+  | FooterSlice
   | NewsListSlice
   | GradientSlice
   | PeopleListSlice
@@ -140,9 +141,130 @@ export type HomeDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomeDocument;
 
 /**
+ * Item in *Footer → Default → Primary → Réseaux sociaux*
+ */
+export interface FooterSliceDefaultPrimarySocialMediasItem {
+  /**
+   * Logo field in *Footer → Default → Primary → Réseaux sociaux*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.social_medias[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Lien field in *Footer → Default → Primary → Réseaux sociaux*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.social_medias[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *Footer → Default → Primary*
+ */
+export interface FooterSliceDefaultPrimary {
+  /**
+   * ID du bloc (unique, pour les liens) field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.slice_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  slice_id: prismic.KeyTextField;
+
+  /**
+   * Logo field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Liens field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.links
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  links: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Réseaux sociaux field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.social_medias[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  social_medias: prismic.GroupField<
+    Simplify<FooterSliceDefaultPrimarySocialMediasItem>
+  >;
+
+  /**
+   * Texte field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Footer*
+ */
+type FooterSliceVariation = FooterSliceDefault;
+
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: Footer
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
+
+/**
  * Primary content in *FullWidthImage → Default → Primary*
  */
 export interface FullWidthImageSliceDefaultPrimary {
+  /**
+   * ID du bloc (unique, pour les liens) field in *FullWidthImage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_image.default.primary.slice_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  slice_id: prismic.KeyTextField;
+
   /**
    * Image field in *FullWidthImage → Default → Primary*
    *
@@ -198,6 +320,16 @@ export type FullWidthImageSlice = prismic.SharedSlice<
  * Primary content in *FullWidthImageTextButton → Default → Primary*
  */
 export interface FullWidthImageTextButtonSliceDefaultPrimary {
+  /**
+   * ID du bloc (unique, pour les liens) field in *FullWidthImageTextButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_image_text_button.default.primary.slice_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  slice_id: prismic.KeyTextField;
+
   /**
    * Image field in *FullWidthImageTextButton → Default → Primary*
    *
@@ -285,6 +417,16 @@ export type FullWidthImageTextButtonSlice = prismic.SharedSlice<
  */
 export interface FullWidthTextSliceDefaultPrimary {
   /**
+   * ID du bloc (unique, pour les liens) field in *FullWidthText → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_text.default.primary.slice_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  slice_id: prismic.KeyTextField;
+
+  /**
    * Titre field in *FullWidthText → Default → Primary*
    *
    * - **Field Type**: Text
@@ -339,6 +481,16 @@ export type FullWidthTextSlice = prismic.SharedSlice<
  * Primary content in *Gradient → Default → Primary*
  */
 export interface GradientSliceDefaultPrimary {
+  /**
+   * ID du bloc (unique, pour les liens) field in *Gradient → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gradient.default.primary.slice_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  slice_id: prismic.KeyTextField;
+
   /**
    * Dégradé field in *Gradient → Default → Primary*
    *
@@ -429,6 +581,16 @@ export interface NewsListSliceDefaultPrimaryNewsItem {
  * Primary content in *NewsList → Default → Primary*
  */
 export interface NewsListSliceDefaultPrimary {
+  /**
+   * ID du bloc (unique, pour les liens) field in *NewsList → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_list.default.primary.slice_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  slice_id: prismic.KeyTextField;
+
   /**
    * Titre field in *NewsList → Default → Primary*
    *
@@ -530,6 +692,16 @@ export interface PeopleListSliceDefaultPrimaryPeoplesItem {
  */
 export interface PeopleListSliceDefaultPrimary {
   /**
+   * ID du bloc (unique, pour les liens) field in *PeopleList → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_list.default.primary.slice_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  slice_id: prismic.KeyTextField;
+
+  /**
    * Personnes field in *PeopleList → Default → Primary*
    *
    * - **Field Type**: Group
@@ -576,6 +748,16 @@ export type PeopleListSlice = prismic.SharedSlice<
  * Primary content in *TitleButton → Default → Primary*
  */
 export interface TitleButtonSliceDefaultPrimary {
+  /**
+   * ID du bloc (unique, pour les liens) field in *TitleButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_button.default.primary.slice_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  slice_id: prismic.KeyTextField;
+
   /**
    * Titre field in *TitleButton → Default → Primary*
    *
@@ -663,6 +845,11 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      FooterSlice,
+      FooterSliceDefaultPrimarySocialMediasItem,
+      FooterSliceDefaultPrimary,
+      FooterSliceVariation,
+      FooterSliceDefault,
       FullWidthImageSlice,
       FullWidthImageSliceDefaultPrimary,
       FullWidthImageSliceVariation,

@@ -18,6 +18,11 @@
 						}
 					}
 				]
+			},
+			"slice_id": {
+				"__TYPE__": "FieldContent",
+				"value": "clothes",
+				"type": "Text"
 			}
 		},
 		"items": []

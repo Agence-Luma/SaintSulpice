@@ -8,6 +8,7 @@ defineProps(getSliceComponentProps<Content.TitleButtonSlice>());
   <section
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
+    :id="slice.primary.slice_id || ''"
   >
     <div class="w-full h-[300px] bg-black flex" :class="slice.primary.reverse ? 'flex-row-reverse' : 'flex-row'">
       <div class="w-[500px] h-full bg-white flex flex-col items-center justify-center text-lightblue">
