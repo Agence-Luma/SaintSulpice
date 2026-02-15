@@ -41,7 +41,7 @@ const close = () => {
         </div>
       </div>
 
-      <button v-if="moreToShow" @click="showMore" class="bg-lightblue text-white rounded-full px-[50px] pb-[5px] text-m font-bold">Afficher plus</button>
+      <button v-if="moreToShow" @click="showMore" class="bg-lightblue text-white rounded-full px-[50px] py-[5px] text-m font-bold font-montserrat">Afficher plus</button>
 
       <div v-show="opened" class="w-full h-full z-[10] fixed top-0 left-0 flex items-center justify-center">
         <div class="w-full h-full md:w-[90%] md:h-[80%] bg-white/90 relative p-[10px] md:p-[50px] flex flex-col-reverse md:flex-row gap-[50px] items-center overflow-scroll pb-[20px] md:pb-[0px]">

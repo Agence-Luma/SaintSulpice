@@ -16,7 +16,7 @@ const { isMobile } = useDevice();
       <div class="text-white w-[370px] flex flex-col items-center ml-[20px] mr-[20px] md:mr-[0px] md:ml-[50px] lg:ml-[200px]">
         <p class="font-bebas uppercase w-full text-l md:text-xl leading-[100%]">{{ slice.primary.title }}</p>
         <div class="font-montserrat w-full text-m md:text-l mb-[20px]"><PrismicRichText :field="slice.primary.text" /></div>
-        <PrismicLink :field="slice.primary.link" target="_blank" class="border-[2px] rounded-full px-[50px] pb-[5px] text-m font-bold" />
+        <PrismicLink :field="slice.primary.link" target="_blank" class="border-[2px] rounded-full px-[50px] py-[5px] text-m font-bold font-montserrat" />
       </div>
 
       <div class="w-full h-full absolute top-1/2 -translate-y-1/2 left-0 -z-[1] flex items-center justify-center">
