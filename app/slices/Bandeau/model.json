@@ -1,0 +1,70 @@
+{
+  "id": "bandeau",
+  "type": "SharedSlice",
+  "name": "Bandeau",
+  "description": "Bandeau",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sous-titre",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Lien",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "text_1": {
+          "type": "Text",
+          "config": {
+            "label": "Texte 1",
+            "placeholder": ""
+          }
+        },
+        "text_2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texte 2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

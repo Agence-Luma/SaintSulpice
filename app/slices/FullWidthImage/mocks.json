@@ -53,6 +53,16 @@
 				"__TYPE__": "FieldContent",
 				"value": "zulu",
 				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "hurt",
+				"type": "Text"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "piano",
+				"type": "Text"
 			}
 		},
 		"items": []

@@ -70,6 +70,7 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type HomeDocumentDataSlicesSlice =
+  | BandeauSlice
   | FooterSlice
   | NewsListSlice
   | GradientSlice
@@ -139,6 +140,101 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = HomeDocument;
+
+/**
+ * Primary content in *Bandeau → Default → Primary*
+ */
+export interface BandeauSliceDefaultPrimary {
+  /**
+   * Titre field in *Bandeau → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bandeau.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Sous-titre field in *Bandeau → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bandeau.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * Lien field in *Bandeau → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bandeau.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Texte 1 field in *Bandeau → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bandeau.default.primary.text_1
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  text_1: prismic.KeyTextField;
+
+  /**
+   * Texte 2 field in *Bandeau → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bandeau.default.primary.text_2
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  text_2: prismic.RichTextField;
+
+  /**
+   * Image field in *Bandeau → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: bandeau.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Bandeau Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BandeauSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BandeauSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Bandeau*
+ */
+type BandeauSliceVariation = BandeauSliceDefault;
+
+/**
+ * Bandeau Shared Slice
+ *
+ * - **API ID**: `bandeau`
+ * - **Description**: Bandeau
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BandeauSlice = prismic.SharedSlice<
+  "bandeau",
+  BandeauSliceVariation
+>;
 
 /**
  * Item in *Footer → Default → Primary → Réseaux sociaux*
@@ -284,6 +380,26 @@ export interface FullWidthImageSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   mobile_image: prismic.ImageField<never>;
+
+  /**
+   * Titre field in *FullWidthImage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_image.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Sous-titre field in *FullWidthImage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: full_width_image.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subtitle: prismic.KeyTextField;
 }
 
 /**
@@ -779,6 +895,16 @@ export interface TitleButtonSliceDefaultPrimary {
   link: prismic.LinkToMediaField<prismic.FieldState, never>;
 
   /**
+   * Image field in *TitleButton → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_button.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
    * A droite ? field in *TitleButton → Default → Primary*
    *
    * - **Field Type**: Boolean
@@ -845,6 +971,10 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BandeauSlice,
+      BandeauSliceDefaultPrimary,
+      BandeauSliceVariation,
+      BandeauSliceDefault,
       FooterSlice,
       FooterSliceDefaultPrimarySocialMediasItem,
       FooterSliceDefaultPrimary,

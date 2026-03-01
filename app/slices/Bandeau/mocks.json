@@ -1,0 +1,73 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "national",
+				"type": "Text"
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum et mollit eiusmod labore qui nisi aliquip et. Aliquip magna minim enim id laboris duis esse sint sit est amet esse sunt occaecat magna. Velit laboris aute aliquip sint voluptate ipsum veniam enim duis aliqua laboris voluptate aliquip laborum."
+						}
+					}
+				]
+			},
+			"link": {
+				"key": "c931d1af-a981-48ee-91b3-a2ced1e17148",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "met"
+				}
+			},
+			"text_1": {
+				"__TYPE__": "FieldContent",
+				"value": "on",
+				"type": "Text"
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+					"width": 3560,
+					"height": 5340
+				},
+				"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+				"width": 3560,
+				"height": 5340,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "modern",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"text_2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Proident labore fugiat est. Ad est amet irure pariatur aliqua et duis ipsum ullamco consequat ea irure nulla in laboris. Nulla eiusmod voluptate laboris exercitation exercitation nulla aute magna Lorem veniam aute fugiat excepteur."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
